@@ -24,7 +24,8 @@ body {
   --Toggle2: hsl(230, 22%, 74%);
 }
 main {
-  height: 100vh;
+  min-height: 120vh;
+  transition: all 0.5s ease;
 }
 header {
   height: 270px;
@@ -53,6 +54,7 @@ nav {
   display: inline-block;
   font-weight: 700;
   color: hsl(231, 6%, 45%);
+  opacity: 0.7;
 }
 .switch {
   position: relative;
@@ -126,8 +128,13 @@ input:checked + .slider:before {
   padding: 20px;
   background-color: hsl(225, 24%, 90%);
   text-align: center;
+  opacity: 0.8;
 }
-
+.bigBox:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  cursor: pointer;
+}
 .bigBox h1 {
   font-size: 52px;
   margin: 15px 0;
@@ -184,12 +191,140 @@ input:checked + .slider:before {
   font-weight: 700;
   color: var(--BrightRed);
 }
+.infoSide {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 11.5%;
+  margin-top: 30px;
+  opacity: 0.6;
+  font-size: 16px;
+}
+.smallSide {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5.5%;
+}
+.up {
+  color: var(--LimeGreen);
+}
+.down {
+  color: var(--BrightRed);
+}
+.smallbox {
+  width: 250px;
+  height: 150px;
+  padding: 30px;
+  background-color: hsl(225, 24%, 90%);
+  opacity: 0.8;
+  border-radius: 5px;
+}
+.smallbox:hover {
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.topSide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.topSide p {
+  font-size: 15px;
+  opacity: 0.6;
+  font-weight: 700;
+}
+.bottomSide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottomSide h1 {
+  font-size: 32px;
+  margin: 15px 0;
+}
+.ranking {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  gap: 5px;
+}
+.ranking p {
+  font-size: 12px;
+  opacity: 0.6;
+  font-weight: 700;
+}
+.attribution {
+  margin-top: 120px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+.darkThemeTopBG {
+  background-color: hsl(228, 28%, 20%);
+}
+.darkThemeBg {
+  background-color: hsl(230, 17%, 14%);
+}
+
+.darkThemeBoxBg {
+  background: hsl(230, 26%, 31%);
+}
+.darkThemeFont {
+  color: #fff;
+}
+@media (max-width: 500px) {
+  header {
+    height: 200px;
+    border-radius: 0;
+  }
+  nav {
+    flex-direction: column;
+  }
+  .nav-h {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+  .switchSide {
+    border-top: 1px solid black;
+    margin-top: 20px;
+    padding-top: 20px;
+    justify-content: space-between;
+  }
+  .bigSide {
+    flex-direction: column;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .bigBox {
+    width: 90%;
+  }
+  .smallSide {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .smallbox {
+    width: 95%;
+  }
+  .attribution {
+    margin: 50px 0;
+  }
+}
 /* 
 #### Dark Theme
 
 - Very Dark Blue (BG): hsl(230, 17%, 14%)
 - Very Dark Blue (Top BG Pattern): hsl(232, 19%, 15%)
-- Dark Desaturated Blue (Card BG): hsl(228, 28%, 20%)
+- Dark Desaturated Blue (Card BG): 
 - Desaturated Blue (Text): hsl(228, 34%, 66%)
 - White (Text): hsl(0, 0%, 100%)
 
